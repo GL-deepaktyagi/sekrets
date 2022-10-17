@@ -1,12 +1,26 @@
+GIT
+  remote: https://github.com/GL-deepaktyagi/main
+  revision: 1836de02e567b8580b8ad54b0b9eaea4f6144e9e
+  specs:
+    main (6.2.3)
+      arrayfields (~> 4.7, >= 4.7.4)
+      chronic (~> 0.6, >= 0.6.2)
+      fattr (~> 2.2, >= 2.2.0)
+      map (~> 6.1, >= 6.1.0)
+
+GIT
+  remote: https://github.com/GL-deepaktyagi/map
+  revision: 0a1dc834cf46b8ab8fd29af3e4fa8a54ea4c003a
+  specs:
+    map (6.6.0)
+
 PATH
   remote: .
   specs:
-    sekrets (1.10.0)
-      coerce (>= 0.0.3)
+    sekrets (1.13.0)
+      coerce (~> 0.0.3)
       fattr (~> 2.2)
       highline (~> 1.6)
-      main (~> 6.1)
-      map (~> 6.3)
 
 GEM
   remote: https://rubygems.org/
@@ -15,19 +29,16 @@ GEM
     chronic (0.10.2)
     coerce (0.0.8)
       chronic (>= 0.6.2)
-    fattr (2.3.0)
-    highline (1.7.8)
-    main (6.2.2)
-      arrayfields (~> 4.7, >= 4.7.4)
-      chronic (~> 0.6, >= 0.6.2)
-      fattr (~> 2.2, >= 2.2.0)
-      map (~> 6.1, >= 6.1.0)
-    map (6.6.0)
+    fattr (2.4.0)
+    highline (1.7.10)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler
+  main!
+  map!
   sekrets!
 
 BUNDLED WITH

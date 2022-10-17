@@ -15,7 +15,7 @@ class Sekrets
 
 #
   def Sekrets.key_for(*args)
-    options = Map.options_for!(args)
+    options = SMap.options_for!(args)
     path = args.shift || options[:path]
 
     if options.has_key?(:key)
@@ -75,7 +75,7 @@ class Sekrets
 
 #
   def Sekrets.read(*args, &block)
-    options = Map.options_for!(args)
+    options = SMap.options_for!(args)
     path = args.shift || options[:path]
     key = args.shift || Sekrets.key_for!(path, options)
 
@@ -88,7 +88,7 @@ class Sekrets
 
 #
   def Sekrets.write(*args, &block)
-    options = Map.options_for!(args)
+    options = SMap.options_for!(args)
     path = args.shift || options[:path]
     content = args.shift || options[:content]
     key = args.shift || Sekrets.key_for!(path, options)
@@ -113,7 +113,7 @@ class Sekrets
     if decrypted
       expanded = ERB.new(decrypted).result(TOPLEVEL_BINDING)
       object = YAML.load(expanded)
-      object.is_a?(Hash) ? Map.for(object) : object
+      object.is_a?(Hash) ? SMap.for(object) : object
     end
   end
 
@@ -506,7 +506,7 @@ BEGIN {
                         if test(?e, key)
                           SEKRETS = Sekrets.settings_for(config)
                         else
-                          SEKRETS = Map.new
+                          SEKRETS = SMap.new
                           warn "missing \#{ key }!"
                         end
                       end
